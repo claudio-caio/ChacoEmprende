@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    LISTA DE ARTÍCULOS EMPRENDIMIENTOS
+{% endblock titulo %}
+
+{% block contenido %}
+<section class="contenedor__listas">
+
+<div class="titulo__articulos">
+    <h2>LISTA DE ARTÍCULOS EMPRENDIMIENTOS</h2>
+</div>
+    
+    <!-- Formulario para filtrar por categoría -->
+     <div class="filtrado__lista">
+         <form method="GET" action="">
+            <label for="categoria">Filtrar por categoría:</label>
+            <select name="categoria" id="categoria" onchange="this.form.submit()">
+                <option value="">Todas las categorías</option>
+                {% for categoria in categorias %}
+                <option value="{{ categoria.id }}" {% if request.GET.categoria == categoria.id|stringformat:"s" %}selected{% endif %}>
+                {{ categoria.nombre }}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+    <!-- Enlaces para ordenar por visitas -->
+    <div class="ordenar__visitas">
+        <h3>Ordenar por visitas:</h3>
+        <div class="ordenar">
+            <a class="ascendente" href="?ordenar_por=asc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Ascendente</a>
+            <a class="descendente" href="?ordenar_por=desc{% if request.GET.categoria %}&categoria={{ request.GET.categoria }}{% endif %}">Descendente</a>
+        </div>
+    </div>
+    
+    <!-- Lista de artículos -->
+    <div class="articulos__cargados">
+        {% for articulo in object_list %}
+        <div class="articulo-item">
+            <!-- Validación para mostrar la imagen si existe, y mensaje si no existe -->
+            {% if articulo.imagen %}
+            <a  href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">
+                <img  class="imagen__cargadad" src="{{ articulo.imagen.url }}" alt="{{ articulo.titulo }}">
+                {% else %}
+                <p>No hay imagen disponible</p>
+                {% endif %}
+                <div class="articulo_caracteristicas">
+                    <p class="articulo__titulo"> {{ articulo.titulo }}</p>
+                    <p>Autor: {{ articulo.autor }}</p>
+                    <p><strong>Categoría:</strong> {{ articulo.categoria.nombre }}</p>
+                </div>
+            </a>
+            <a class="detalles" href="{% url 'emprendimientos:detalle_articulo' articulo.pk %}">VER MÁS DETALLE</a>
+        </div>
+        {% empty %}
+        <div class="zero__articulos">
+            <p>No hay artículos disponibles en esta categoría.</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="boton__home">
+        <a  class="regreso__home" href="{% url 'index' %}">VOLVER AL HOME</a>
+    </div>
+    
+</section>
+{% endblock contenido %}

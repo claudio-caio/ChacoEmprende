@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<section class="pantalla">
+    <div class="imagen__wrapper">
+        <img class="portada" src="{% static 'img/portada_base.jpg' %}" alt="">   
+    </div>
+</section>
+
+<!-- Articulos -->
+<section class="contenido__articulos">
+    <div class="articulos__fondo">
+        <div class="columna">
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 2 %}">
+                        <img class="imagen__emprendimiento" src="{% static 'img/Melania_carbo.webp' %}" alt="">
+                        <div class="texto magna">
+                            <h2>CHACO CHARCOAL</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 3%}">
+                        <img class="imagen__emprendimiento" src="{% static 'img/Emilio-Ocampo-1.jpg' %}" alt="">
+                        <div class="texto magna">
+                            <h2>SABORES Y SABERES</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 4 %}">
+                        <img  class="imagen__emprendimiento" src="{% static 'img/naturaleza_geometrica.png' %}" alt="">
+                        <div class="texto magna">
+                            <h2>NATURALEZA GEOMÉTRICA</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="columna">
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 1 %}">
+                        <img class="imagen__emprendimiento" src="{% static 'img/tana_alfajores.png' %}" alt="">
+                        <div class="texto magna">
+                            <h2>ALFAJORES LA TANA</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 6 %}">
+                        <img class="imagen__emprendimiento" src="{% static 'img/borrachos.png' %}" alt="">
+                        <div class="texto magna">
+                            <h2>CULLEN HARRISON BEER</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="articulos">
+                <div class="articulos__columna">
+                    <a href="{% url 'emprendimientos:detalle_articulo' 5 %}">
+                        <img class="imagen__emprendimiento" src="{% static 'img/miel_chaco.png' %}" alt="">
+                        <div class="texto magna">
+                            <h2>ARBOREA MIEL</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+<!-- Articulos End -->
+{% endblock contenido %}

@@ -1,0 +1,98 @@
+.art_detalle {
+    margin: 75px 336px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #19388d;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.art_det{
+    margin-bottom: 20px;
+}
+
+.titulo_art {
+    font-size: 2em;
+    /* Tamaño del título */
+    margin-bottom: 20px;
+    /* Espaciado debajo del título */
+    color: #e6dfdf;
+    /* Color del texto del título */
+}
+
+.art_com {
+    color: #7fe6ff;
+    padding: 1%;
+
+}
+button {
+    background-color: #e94560;
+    /* Color de fondo del botón */
+    color: white;
+    /* Color del texto del botón */
+    padding: 10px 15px;
+    /* Espaciado interno del botón */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    margin-top: 10px;
+    /* Espaciado superior */
+}
+
+button:hover {
+    background-color: #d03350;
+    /* Color al pasar el mouse por encima */
+}
+
+.comentario_det {
+    margin-bottom: 20px;
+    /* Espaciado entre comentarios */
+    padding: 10px;
+    /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo ligero para comentarios */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    color: #050303;
+    /* Color del texto de comentarios */
+}
+.p_description{
+    padding: 3%;
+    font-size: x-large;
+}
+.comentario_textarea{
+    width: 100%;
+    /* Ancho completo */
+    height: 100px;
+    /* Altura fija */
+    max-height: 100px;
+    /* Altura máxima */
+    padding: 10px;
+    /* Espaciado interno */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    border: 1px solid #ccc;
+    /* Borde ligero */
+    resize: none;
+    /* Desactivar el redimensionamiento */
+}
+
+.boton_det{
+    padding: 1%;
+    font-size:larger;
+    color: #050303;
+}
+.boton_visit{
+    padding: 1%;
+    font-size: larger;
+}
+
+
+.imagen__detalle {
+    width: 100%;
+}
